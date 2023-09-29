@@ -23,7 +23,7 @@ jobs:
   
           git clone https://loerinczy:$TOKEN@github.com/loerinczy/databricks_demo # This works
   
-          cd my-repo
+          cd databricks_demo
           git config user.name "user"
           git config user.email "dev@example.com"
   
