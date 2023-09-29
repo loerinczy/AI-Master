@@ -24,5 +24,6 @@ jobs:
         run: touch ${{ inputs.dir_name }}
       - name: Commit report
         run: |
-          git commit -am "Automated report"
+          git add .
+          git commit -m "Automated report"
           git push
