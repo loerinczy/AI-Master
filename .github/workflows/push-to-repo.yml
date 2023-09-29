@@ -37,5 +37,4 @@ jobs:
           # origin ***github.com/owner/my-repo.git (fetch)
           # origin ***github.com/owner/my-repo.git (push)
   
-          git push --set-upstream origin test-branch # This does not work
-          git push --set-upstream https://loerinczy:$TOKEN@github.com/loerinczy/databricks_demo test-branch
+          git push --set-upstream origin test-branch
