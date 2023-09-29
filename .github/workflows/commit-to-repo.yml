@@ -1,0 +1,28 @@
+name: commit-to-repo
+on:
+  workflow_dispatch:
+    inputs:
+      dir_name:
+        required: true
+        type: string
+      branch_name:
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create new branch
+        run: |
+          git config --global user.name 'Your Name'
+          git config --global user.email 'your-username@users.noreply.github.com'
+          git checkout -b ${{ inputs.branch_name }}
+      - name: Create report file
+        run: touch ${{ inputs.dir_name }}
+      - name: Commit report
+        run: |
+          git commit -am "Automated report"
+          git push
