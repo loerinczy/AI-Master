@@ -26,4 +26,4 @@ jobs:
         run: |
           git add .
           git commit -m "Automated report"
-          git push -u origin/${{ inputs.branch_name }}
+          git push -u origin ${{ inputs.branch_name }}
