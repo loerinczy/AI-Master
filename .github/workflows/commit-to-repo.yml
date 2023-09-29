@@ -20,8 +20,8 @@ jobs:
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
           git remote -v
-          git branch --set-upstream-to=origin/${{ branch_name }} ${{ branch_name }}
-          git checkout ${{ branch_name }}
+          git branch --set-upstream-to=origin/${{ inputs.branch_name }} ${{ inputs.branch_name }}
+          git checkout ${{ inputs.branch_name }}
       - name: Create report file
         run: touch ${{ inputs.dir_name }}
       - name: Commit report
