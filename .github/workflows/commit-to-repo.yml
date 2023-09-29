@@ -19,11 +19,13 @@ jobs:
         run: |
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
-          git checkout -b ${{ inputs.branch_name }}
+          git remote -v
+          git branch --set-upstream-to=origin/${{ branch_name }} ${{ branch_name }}
+          git checkout ${{ branch_name }}
       - name: Create report file
         run: touch ${{ inputs.dir_name }}
       - name: Commit report
         run: |
           git add .
           git commit -m "Automated report"
-          git push --set-upstream origin ${{ inputs.branch_name }}
+          git push
