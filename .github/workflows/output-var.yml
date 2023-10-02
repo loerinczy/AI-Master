@@ -1,6 +1,7 @@
+name: test-output
+
 on:
   workflow_dispatch:
-
 
 jobs:
   my-job:
