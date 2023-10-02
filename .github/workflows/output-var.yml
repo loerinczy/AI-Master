@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: yield-output
+        run: echo "my_output=some_output" >> "$GITHUB_OUTPUT"
+      - name: get-output
+        run: echo "The output is ${{ steps.yield-output.outputs.my_output }} 
