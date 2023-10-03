@@ -1,0 +1,18 @@
+name: steps-cwd
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: make dir
+        run: mkdir test_dir
+      - name: make file
+        run: |
+          cd test_dir
+          touch myfile
+      - name: pwd
+        run: echo $PWD
