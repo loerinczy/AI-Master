@@ -18,11 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: yield-output
-        run: echo "my_output=some_output" >> "$GITHUB_OUTPUT"
+        run: echo "my_output=some_output" >> "$GITHUB_ENV"
       - name: get-output
-        env:
-          OUTPUT: ${{ steps.yield-output.outputs.my_output }}
-        run: echo "The output is $OUTPUT"
+        run: echo "The output is $my_output"
       - name: input-choice
         env:
           MY_INPUT: ${{ inputs.file_type }}
