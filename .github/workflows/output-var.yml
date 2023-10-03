@@ -21,9 +21,9 @@ jobs:
         run: echo "my_output=some_output" >> "$GITHUB_OUTPUT"
       - name: get-output
         env:
-          output: ${{ steps.yield-output.outputs.my_output }}
+          OUTPUT: ${{ steps.yield-output.outputs.my_output }}
         run: echo "The output is $OUTPUT"
       - name: input-choice
         env:
-          my_input: ${{ inputs.file_type }}
+          MY_INPUT: ${{ inputs.file_type }}
         run: echo "File type is $MY_INPUT"
