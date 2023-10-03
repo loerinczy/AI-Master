@@ -9,10 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: make dir
-        run: mkdir test_dir
-      - name: make file
         run: |
+          mkdir test_dir
           cd test_dir
-          touch myfile
-      - name: pwd
-        run: echo $PWD
+          echo $PWD
