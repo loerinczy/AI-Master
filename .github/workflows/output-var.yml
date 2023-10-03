@@ -27,5 +27,6 @@ jobs:
         env:
           MY_INPUT: ${{ inputs.file_type }}
           other_var: value
-        run: echo "File type is $MY_INPUT"
-        run: echo "Other var is $other_var"
+        run: |
+          echo "File type is $MY_INPUT"
+          echo "Other var is $other_var"
