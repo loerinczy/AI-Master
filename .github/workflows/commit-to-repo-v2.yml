@@ -1,4 +1,4 @@
-name: commit-to-repo
+name: commit-to-repo-v2
 on:
   workflow_dispatch:
     inputs:
@@ -20,6 +20,8 @@ jobs:
           branch: ${{ inputs.branch_name }}
       - name: create-file
         run: touch test-file
+      - name: check_branches
+        run: git branch -a
       - name: push
         env:
           branch_name: ${{ inputs.branch_name }}
