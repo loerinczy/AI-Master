@@ -24,6 +24,8 @@ jobs:
         env:
           branch_name: ${{ inputs.branch_name }}
         run: |
+          git config --global user.name "Dome"
+          git config --global user.email "dome.email"
           git add .
           git commit -m "test commit"
           git push -u origin $branch_name
