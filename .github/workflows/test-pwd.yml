@@ -1,0 +1,15 @@
+name: test-pwd
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  test_pwd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first_echo
+        run: echo $PWD
+      - uses: actions/checkout@v3
+      - name: second_echo
+        run: echo $PWD
